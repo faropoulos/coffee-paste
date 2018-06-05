@@ -12,6 +12,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { SharedModule } from '@coffee-shared/shared.module';
 
+import * as Components from '@coffee-core/components';
+import * as Services from '@coffee-core/services';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -24,10 +27,20 @@ import { SharedModule } from '@coffee-shared/shared.module';
     AngularFireStorageModule,
     AngularFireAuthModule
   ],
-  declarations: [],
+  declarations: [
+    Components.LoginComponent,
+    Components.PageNotFoundComponent,
+    Components.ShellComponent
+  ],
+  providers: [
+    Services.AuthenticationService
+  ],
   exports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    Components.LoginComponent,
+    Components.PageNotFoundComponent,
+    Components.ShellComponent    
   ]
 })
 export class CoreModule {
