@@ -1,4 +1,31 @@
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '~@angular/material/theming';
+@include mat-core();
+
+$primary: mat-palette($mat-deep-purple);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+$warn: mat-palette($mat-red);
+$theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($theme);
+
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent: mat-palette($mat-amber, A200, A100, A400);
+$dark-warn: mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+.coffee-dark-theme {
+    @include angular-material-theme($dark-theme);
+}
+
 body {
     margin: 0;
 }
+
+
+
+/*
+Yellow #f7d86a
+Orange #e67757
+Redish #9f3c55
+Purple #563660
+*/

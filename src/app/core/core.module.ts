@@ -14,6 +14,7 @@ import { SharedModule } from '@coffee-shared/shared.module';
 
 import * as Components from '@coffee-core/components';
 import * as Services from '@coffee-core/services';
+import * as Guards from '@coffee-core/guards';
 
 @NgModule({
   imports: [
@@ -28,17 +29,18 @@ import * as Services from '@coffee-core/services';
     AngularFireAuthModule
   ],
   declarations: [
-    Components.LoginComponent,
+    Components.AuthComponent,
     Components.PageNotFoundComponent,
     Components.ShellComponent
   ],
   providers: [
-    Services.AuthenticationService
+    Services.AuthService,
+    Guards.AuthGuard
   ],
   exports: [
     BrowserModule,
     BrowserAnimationsModule,
-    Components.LoginComponent,
+    Components.AuthComponent,
     Components.PageNotFoundComponent,
     Components.ShellComponent    
   ]

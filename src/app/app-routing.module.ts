@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuard } from '@coffee-core/guards';
+
 import {
-  LoginComponent,
+  AuthComponent,
   ShellComponent,
   PageNotFoundComponent
 } from '@coffee-core/components';
@@ -11,9 +13,14 @@ const routes: Routes = [
   {
     path: '',
     component: ShellComponent,
-    children: [ ]
+    children: [
+      {
+        path: 'admin',
+        loadChildren: '@coffee-admin/admin.module#AdminModule'
+      },
+    ]
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: AuthComponent },
   { path: '**', component: PageNotFoundComponent }  
 ];
 

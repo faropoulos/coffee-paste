@@ -6,7 +6,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
 @Injectable()
-export class AuthenticationService {
+export class AuthService {
   user: Observable<firebase.User>;
   constructor(private firebaseAuth: AngularFireAuth,
     private router: Router) {

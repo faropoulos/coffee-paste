@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "paths": {
       "@coffee-core/*": ["src/app/core/*"],
+      "@coffee-admin/*": ["src/app/admin/*"],
       "@coffee-shared/*": ["src/app/shared/*"],
       "@environments/*": ["src/environments/*"]
     },
