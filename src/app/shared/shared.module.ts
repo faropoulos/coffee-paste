@@ -3,20 +3,29 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import {
-  MatButtonModule
+  MatButtonModule,
+  MatIconModule,
+  MatRippleModule,
+  MatTooltipModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
+    MatTooltipModule
   ],
   declarations: [],
   providers: [],
   exports: [
     CommonModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
+    MatTooltipModule
   ]
 })
 export class SharedModule { }

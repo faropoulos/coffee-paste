@@ -20,6 +20,9 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 body {
     margin: 0;
 }
+.spacer {
+    flex: 1 0 0;
+}
 
 
 

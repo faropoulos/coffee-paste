@@ -6,7 +6,7 @@
       "@coffee-core/*": ["src/app/core/*"],
       "@coffee-admin/*": ["src/app/admin/*"],
       "@coffee-shared/*": ["src/app/shared/*"],
-      "@environments/*": ["src/environments/*"]
+      "@coffee-environments/*": ["src/environments/*"]
     },
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

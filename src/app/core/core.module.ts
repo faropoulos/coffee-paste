@@ -1,4 +1,4 @@
-import { environment } from '@environments/environment';
+import { environment } from '@coffee-environments/environment';
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,9 +29,12 @@ import * as Guards from '@coffee-core/guards';
     AngularFireAuthModule
   ],
   declarations: [
-    Components.AuthComponent,
+    Components.AppLoginComponent,
+    Components.AppSignUpComponent,
     Components.PageNotFoundComponent,
-    Components.ShellComponent
+    Components.AppShellComponent,
+    Components.AppMenuComponent,
+    Components.DashboardComponent
   ],
   providers: [
     Services.AuthService,
@@ -40,9 +43,12 @@ import * as Guards from '@coffee-core/guards';
   exports: [
     BrowserModule,
     BrowserAnimationsModule,
-    Components.AuthComponent,
+    Components.AppLoginComponent,
+    Components.AppMenuComponent,
     Components.PageNotFoundComponent,
-    Components.ShellComponent    
+    Components.AppShellComponent,
+    Components.AppSignUpComponent,
+    Components.DashboardComponent    
   ]
 })
 export class CoreModule {

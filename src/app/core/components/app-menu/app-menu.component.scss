@@ -1,0 +1,46 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 0;
+    width: 80px;
+    flex-shrink: 0;
+    z-index: 3;
+    background: #ce5169;
+    background: -webkit-linear-gradient(to right bottom, #ce5169, #a64262); 
+    background: linear-gradient(to right bottom, #ce5169, #a64262);
+}
+#app-menu-logo {
+    cursor: pointer;
+    display: flex;
+    height: 3.5rem;
+    padding: 1rem 0;
+    align-items: center;
+    &:focus {
+        outline: none;
+    }
+    img {
+        height: 50px;
+        margin: auto;
+        width: 50px;
+    }
+}
+.app-menu-item {
+    position: relative;
+    display: flex;
+    color: #ffffff;
+    cursor: pointer;
+    height: 3.5rem;
+    transition: 150ms ease-out;
+    &.active,  &:hover {
+        color: #f6d282;
+        outline: none;
+    }
+}
+.app-menu-item-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}

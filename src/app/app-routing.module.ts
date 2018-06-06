@@ -4,23 +4,25 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from '@coffee-core/guards';
 
 import {
-  AuthComponent,
-  ShellComponent,
+  AppLoginComponent,
+  AppSignUpComponent,
+  AppShellComponent,
+  DashboardComponent,
   PageNotFoundComponent
 } from '@coffee-core/components';
 
 const routes: Routes = [
   {
     path: '',
-    component: ShellComponent,
+    component: AppShellComponent,
     children: [
-      {
-        path: 'admin',
-        loadChildren: '@coffee-admin/admin.module#AdminModule'
-      },
-    ]
+      { path: '', component: DashboardComponent },
+      { path: 'admin', loadChildren: '@coffee-admin/admin.module#AdminModule' },
+    ],
+    canActivate: [ AuthGuard ]
   },
-  { path: 'login', component: AuthComponent },
+  { path: 'login', component: AppLoginComponent },
+  { path: 'signup', component: AppSignUpComponent },
   { path: '**', component: PageNotFoundComponent }  
 ];
 

@@ -7,5 +7,8 @@ export const environment = {
     projectId: "fir-app-f846f",
     storageBucket: "fir-app-f846f.appspot.com",
     messagingSenderId: "702169113728"
+  },
+  application: {
+    logoUrl: ''
   }
 };

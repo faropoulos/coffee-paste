@@ -21,11 +21,11 @@ export class AuthService {
         console.log('Something went wrong:',err.message);
       });    
   }
-  login(email: string, password: string) {
+  login(email: string, password: string , redirect: string) {
     this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Nice, it worked!', res);
-        this.router.navigate(['/']);
+        this.router.navigate([redirect]);
       }).catch(err => {
         console.log('Something went wrong:',err.message);
       });
