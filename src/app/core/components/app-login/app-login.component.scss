@@ -1,0 +1,48 @@
+:host {
+    position: relative;
+    display: flex;
+    flex: 1 0 0;
+    min-height: 0;
+    min-width: 0;
+    padding: 4rem;
+    overflow: hidden;
+}
+#lg-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transform: translateX(450px) skewX(-30deg);
+    background: #ce5169;
+    background: -webkit-linear-gradient(to right bottom, #ce5169, #a64262); 
+    background: linear-gradient(to right bottom, #ce5169, #a64262);
+}
+#lg-container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+#lg-subheader {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    font-weight: 600;
+    color: #8b7ed5;
+}
+#lg-header {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: #673ab7;
+}
+#lg-form {
+    display: flex;
+    flex-direction: column;
+}
+.spacer.flex-2 {
+    flex: 2 0 0;
+}

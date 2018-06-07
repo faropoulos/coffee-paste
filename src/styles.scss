@@ -19,6 +19,7 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
 body {
     margin: 0;
+    font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
 }
 .spacer {
     flex: 1 0 0;

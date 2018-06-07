@@ -1,3 +1,23 @@
-<p>
-  login works!
-</p>
+<div id="lg-background"></div>
+<div id="lg-container">
+  <div id="lg-logo"></div>
+  <span class="spacer"></span>  
+  <div id="lg-subheader">Welcome to</div>
+  <div id="lg-header">Coffee Paste</div>
+  <span class="spacer"></span>
+  <form id="lg-form">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username or Email">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password">
+      <mat-icon matSuffix>visibility</mat-icon>
+    </mat-form-field>
+    <button mat-raised-button color="primary">
+      LOGIN
+    </button>
+  </form>
+  <span class="spacer"></span>  
+  <div id="lg-sign-up">Don't have an account? <a routerLink="/signup" mat-button color="primary">Sign Up!</a></div>
+  <span class="spacer flex-2"></span>  
+</div>

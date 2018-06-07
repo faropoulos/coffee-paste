@@ -6,7 +6,8 @@ import {
   MatButtonModule,
   MatIconModule,
   MatRippleModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatInputModule
 } from '@angular/material';
 
 @NgModule({
@@ -16,7 +17,8 @@ import {
     MatButtonModule,
     MatIconModule,
     MatRippleModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatInputModule
   ],
   declarations: [],
   providers: [],
@@ -25,7 +27,8 @@ import {
     MatButtonModule,
     MatIconModule,
     MatRippleModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatInputModule
   ]
 })
 export class SharedModule { }
