@@ -101,7 +101,8 @@ import * as Components from '@coffee-shared/components';
     MatRippleModule,
     MatSlideToggleModule,
     MatSnackBarModule,
-    ScrollbarModule
+    ScrollbarModule,
+    Components.AppAvatarComponent
   ]
 })
 export class SharedModule { }
