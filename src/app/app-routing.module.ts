@@ -16,7 +16,8 @@ const routes: Routes = [
     path: '',
     component: AppShellComponent,
     children: [
-      { path: '', component: DashboardComponent },
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
       { path: 'admin', loadChildren: '@coffee-admin/admin.module#AdminModule' },
     ],
     canActivate: [ AuthGuard ]

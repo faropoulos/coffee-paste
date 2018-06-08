@@ -7,9 +7,10 @@
   <span class="spacer"></span>
   <form id="lg-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input type="text" matInput placeholder="Username or Email" formControlName="email">
+      <input type="text" matInput placeholder="Email" formControlName="email">
       <mat-error>
-        <ng-container *ngIf="loginForm.controls.email.errors?.invalid">Email is <strong>invalid</strong></ng-container>
+        <ng-container *ngIf="loginForm.controls.email.errors?.invalid">That account <strong>doesn't exist</strong></ng-container>
+        <ng-container *ngIf="loginForm.controls.email.errors?.pattern">Enter a <strong>valid email address</strong></ng-container>
         <ng-container *ngIf="loginForm.controls.email.errors?.required">Email is <strong>required</strong></ng-container>
       </mat-error>
     </mat-form-field>
@@ -21,9 +22,7 @@
         <ng-container *ngIf="loginForm.controls.password.errors?.required">Password is <strong>required</strong></ng-container>
       </mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary">
-      LOGIN
-    </button>
+    <button mat-raised-button color="primary">LOGIN</button>
   </form>
   <span class="spacer"></span>  
   <div id="lg-sign-up">Don't have an account? <a routerLink="/signup" mat-button color="primary">Sign Up!</a></div>

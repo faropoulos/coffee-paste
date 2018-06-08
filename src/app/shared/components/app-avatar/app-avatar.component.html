@@ -1,0 +1,4 @@
+<div [attr.class]="avatarSize">
+  <div *ngIf="user.avatarUrl" class="avatar-img" [style.background-image]="'url('+ user.avatarUrl +')'"></div>
+  <span class="avatar-initials">{{ user.initials }}</span>
+</div>

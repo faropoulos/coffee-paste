@@ -24,6 +24,14 @@ body {
 .spacer {
     flex: 1 0 0;
 }
+// Change Mat Defaults
+
+.mat-menu-content {
+    padding: 0!important;
+}
+.mat-menu-panel {
+  max-width: none!important;
+}
 
 
 

@@ -1,0 +1,57 @@
+:host {
+    margin: auto;
+    cursor: pointer;
+    display: flex;
+    height: 3.5rem;
+    padding: 1rem 0;
+    align-items: center;
+}
+#header-user-btn {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    padding: 0;
+    overflow: hidden;
+}
+#au-user {
+    min-width: 250px;
+    height: 100px;
+    display: flex;
+    flex: 1;
+    flex-flow: row;
+    margin-bottom: 8px;
+    align-items: center;
+    text-decoration: none;
+    background-color: #5d4362;
+    color: #f6d282;
+    padding: 0 1rem;
+}
+#au-details {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    width: calc(100% - 60px);
+    padding-left: 1rem;
+    line-height: 1rem;
+}
+.au-name,
+.au-mail,
+.au-type {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+.au-name {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+}
+.au-mail,
+.au-type {
+    font-size: .9rem;
+    line-height: 1.2;
+}
+.au-mail {
+    font-weight: 300;
+}

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { FormGroup } from "@angular/forms";
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -8,44 +9,47 @@ import * as firebase from 'firebase/app';
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
-  constructor(private firebaseAuth: AngularFireAuth,
-    private router: Router) {
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = firebaseAuth.authState;
   }
-  signup(email: string, password: string, form: any) {
-    this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
+  signup(form: any) {
+    this.firebaseAuth.auth.createUserWithEmailAndPassword(form.value.email, form.value.password)
       .then(res => {
         console.log('Success!', res);
         this.router.navigate(['/']);        
       }).catch(err => {
-        if(form){
-          if(err.error.type === 'password'){
-            form.controls.password.setErrors({'invalid': true});
-          }else if(err.error.type === 'email'){
-            form.controls.email.setErrors({'invalid': true});
-          }
-        }
-        console.log('Something went wrong:',err.message);
+        console.log(err);
+        this.handleFormErrors(form, err);
       });    
   }
-  login(email: string, password: string , redirect: string, form: any) {
-    this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
+  login(form: FormGroup, redirect: string) {
+    this.firebaseAuth.auth.signInWithEmailAndPassword(form.value.email, form.value.password)
       .then(res => {
         console.log('Nice, it worked!', res);
         this.router.navigate([redirect]);
       }).catch(err => {
-        if(form){
-          if(err.error.type === 'password'){
-            form.controls.password.setErrors({'invalid': true});
-          }else if(err.error.type === 'email'){
-            form.controls.email.setErrors({'invalid': true});
-          }
-        }
-        console.log('Something went wrong:',err.message);
+        console.log(err);
+        this.handleFormErrors(form, err);
       });
   }
   logout() {
     this.firebaseAuth.auth.signOut();
     this.router.navigate(['/login']);
+  }
+  handleFormErrors(form, err) {
+    switch(err.code) {
+      case 'auth/wrong-password':
+        form.controls.password.setErrors({'invalid': true});
+        break;
+      case 'auth/user-not-found':
+        form.controls.email.setErrors({'invalid': true});
+        break;
+      case 'auth/email-already-in-use':
+        form.controls.email.setErrors({'invalid': true});
+        break;
+      case 'auth/weak-password':
+        form.controls.password.setErrors({'weak': true});
+        break;
+    }
   }
 }

@@ -1,0 +1,35 @@
+<app-avatar [size]="'small'" [matMenuTriggerFor]="menu">
+</app-avatar>
+<mat-menu #menu="matMenu" [overlapTrigger]="true">
+  <a id="au-user">
+    <div class="user-avatar">
+        <app-avatar [size]="'small'"></app-avatar>
+    </div>
+    <div id="au-details">
+      <div class="au-name">User Name</div>
+      <div class="au-username">@username</div>
+      <div class="au-mail">{{ user.email }}</div>
+    </div>
+  </a>
+  <button mat-menu-item routerLink="/profile">
+    <mat-icon>account_box</mat-icon>
+    <span>Your Profile</span>
+  </button>
+  <button mat-menu-item routerLink="/" (click)="signOut()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Sign Out</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item>
+    <mat-icon>settings</mat-icon>
+    <span>Settings</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>help</mat-icon>
+    <span>Need help?</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>rate_review</mat-icon>
+    <span>Send feedback</span>
+  </button>
+</mat-menu>

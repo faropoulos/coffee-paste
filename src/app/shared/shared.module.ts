@@ -8,8 +8,12 @@ import {
   MatIconModule,
   MatRippleModule,
   MatTooltipModule,
-  MatInputModule
+  MatInputModule,
+  MatMenuModule,
+  MatDividerModule
 } from '@angular/material';
+
+import * as Components from '@coffee-shared/components';
 
 @NgModule({
   imports: [
@@ -20,9 +24,13 @@ import {
     MatRippleModule,
     MatTooltipModule,
     MatInputModule,
+    MatMenuModule,
+    MatDividerModule,
     ReactiveFormsModule
   ],
-  declarations: [],
+  declarations: [
+    Components.AppAvatarComponent
+  ],
   providers: [],
   exports: [
     CommonModule,
@@ -31,7 +39,10 @@ import {
     MatRippleModule,
     MatTooltipModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatMenuModule,
+    MatDividerModule,
+    Components.AppAvatarComponent
   ]
 })
 export class SharedModule { }

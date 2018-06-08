@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
+import { ActivatedRoute } from '@angular/router';
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { environment } from '@coffee-environments/environment';
 
-import { AngularFirestore } from 'angularfire2/firestore';
 import { AuthService } from '@coffee-core/services';
 
 @Component({
@@ -17,13 +16,8 @@ export class AppLoginComponent implements OnInit {
   loginForm: FormGroup;
   passwordType: string = 'password';
   visibilityIcon: string = 'visibility';
-  constructor(private authService: AuthService,
-    private db: AngularFirestore,
-    private router: Router,
-    private route: ActivatedRoute
-  ) { }
+  constructor(private authService: AuthService, private route: ActivatedRoute) { }
   ngOnInit() {
-    // Redirect to the link entered before authenticating
     this.return = this.route.snapshot.queryParamMap.get('return') || '/';
     this.loginForm = new FormGroup({
       email: new FormControl(null, [
@@ -39,12 +33,6 @@ export class AppLoginComponent implements OnInit {
     this.visibilityIcon = this.passwordType === 'password' ? 'visibility' : 'visibility_off';
   }
   onSubmit(){
-    console.log(this.loginForm.value);
-    this.authService.login(this.loginForm.value.email,
-      this.loginForm.value.passowrd,
-      this.return,
-      this.loginForm);
-    // const user = new User(this.loginForm.value.email, this.loginForm.value.password);
-    // this.authService.signin(user, this.loginForm);
+    this.authService.login(this.loginForm, this.return);
   }
 }

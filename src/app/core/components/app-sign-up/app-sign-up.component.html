@@ -1,3 +1,30 @@
-<p>
-  sign-up works!
-</p>
+<div id="su-background"></div>
+<div id="su-container">
+  <div id="su-logo"></div>
+  <span class="spacer"></span>  
+  <div id="su-subheader">Create your</div>
+  <div id="su-header">Coffee Paste Account</div>
+  <span class="spacer"></span>
+  <form id="su-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Email" formControlName="email">
+      <mat-error>
+        <ng-container *ngIf="signupForm.controls.email.errors?.invalid">That account <strong>already exist</strong></ng-container>
+        <ng-container *ngIf="signupForm.controls.email.errors?.pattern">Enter a <strong>valid email address</strong></ng-container>
+        <ng-container *ngIf="signupForm.controls.email.errors?.required">Email is <strong>required</strong></ng-container>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input [attr.type]="passwordType" matInput placeholder="Password" formControlName="password">
+      <mat-icon id="visibility-icon" (click)="togglePasswordVisibility($event)" matSuffix>{{ visibilityIcon }}</mat-icon>
+      <mat-error>
+        <ng-container *ngIf="signupForm.controls.password.errors?.required">Password is <strong>required</strong></ng-container>
+        <ng-container *ngIf="signupForm.controls.password.errors?.weak">Password must contain <strong>6 or more characters</strong></ng-container>
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Create Account</button>
+  </form>
+  <span class="spacer"></span>
+  <div id="su-login">Already have an account? <a routerLink="/login" mat-button color="primary">Login!</a></div>
+  <span class="spacer flex-2"></span>  
+</div>

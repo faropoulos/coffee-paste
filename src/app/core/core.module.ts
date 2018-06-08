@@ -34,10 +34,12 @@ import * as Guards from '@coffee-core/guards';
     Components.PageNotFoundComponent,
     Components.AppShellComponent,
     Components.AppMenuComponent,
+    Components.AppUserComponent,
     Components.DashboardComponent
   ],
   providers: [
     Services.AuthService,
+    Services.UsersService,
     Guards.AuthGuard
   ],
   exports: [
@@ -45,6 +47,7 @@ import * as Guards from '@coffee-core/guards';
     BrowserAnimationsModule,
     Components.AppLoginComponent,
     Components.AppMenuComponent,
+    Components.AppUserComponent,
     Components.PageNotFoundComponent,
     Components.AppShellComponent,
     Components.AppSignUpComponent,

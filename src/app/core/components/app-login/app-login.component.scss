@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     z-index: 2;
+    max-width: 300px;
 }
 #lg-subheader {
     font-size: 1.4rem;
@@ -42,6 +43,9 @@
 #lg-form {
     display: flex;
     flex-direction: column;
+    mat-form-field {
+        margin-bottom: 15px;
+    }
 }
 #visibility-icon {
     cursor: pointer;

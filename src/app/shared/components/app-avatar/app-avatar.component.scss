@@ -1,0 +1,26 @@
+@mixin avatar($size) {
+    width: $size;
+    height: $size;
+    background-color: #f6d282;
+    color: #593054;
+    text-align: center;
+    border-radius: 50%;
+    user-select: none;
+    overflow: hidden;
+    .avatar-initials {
+      position: relative;
+      font-size: $size*0.4;
+      line-height: $size;
+    }
+    .avatar-img {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+    }
+}
+
+.avatar { @include avatar(100px); }
+.avatar-sm { @include avatar(50px); }
+.avatar-lg { @include avatar(250px); }
