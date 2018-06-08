@@ -9,6 +9,9 @@ export const environment = {
     messagingSenderId: "702169113728"
   },
   application: {
-    logoUrl: ''
+    logoUrl: '',
+    helpers: {
+      emailRegex: "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+    }
   }
 };

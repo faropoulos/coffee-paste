@@ -5,13 +5,21 @@
   <div id="lg-subheader">Welcome to</div>
   <div id="lg-header">Coffee Paste</div>
   <span class="spacer"></span>
-  <form id="lg-form">
+  <form id="lg-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input type="text" matInput placeholder="Username or Email">
+      <input type="text" matInput placeholder="Username or Email" formControlName="email">
+      <mat-error>
+        <ng-container *ngIf="loginForm.controls.email.errors?.invalid">Email is <strong>invalid</strong></ng-container>
+        <ng-container *ngIf="loginForm.controls.email.errors?.required">Email is <strong>required</strong></ng-container>
+      </mat-error>
     </mat-form-field>
     <mat-form-field>
-      <input type="password" matInput placeholder="Password">
-      <mat-icon matSuffix>visibility</mat-icon>
+      <input [attr.type]="passwordType" matInput placeholder="Password" formControlName="password">
+      <mat-icon id="visibility-icon" (click)="togglePasswordVisibility($event)" matSuffix>{{ visibilityIcon }}</mat-icon>
+      <mat-error>
+        <ng-container *ngIf="loginForm.controls.password.errors?.invalid">Password is <strong>invalid</strong></ng-container>
+        <ng-container *ngIf="loginForm.controls.password.errors?.required">Password is <strong>required</strong></ng-container>
+      </mat-error>
     </mat-form-field>
     <button mat-raised-button color="primary">
       LOGIN

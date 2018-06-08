@@ -12,21 +12,35 @@ export class AuthService {
     private router: Router) {
     this.user = firebaseAuth.authState;
   }
-  signup(email: string, password: string) {
+  signup(email: string, password: string, form: any) {
     this.firebaseAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Success!', res);
         this.router.navigate(['/']);        
       }).catch(err => {
+        if(form){
+          if(err.error.type === 'password'){
+            form.controls.password.setErrors({'invalid': true});
+          }else if(err.error.type === 'email'){
+            form.controls.email.setErrors({'invalid': true});
+          }
+        }
         console.log('Something went wrong:',err.message);
       });    
   }
-  login(email: string, password: string , redirect: string) {
+  login(email: string, password: string , redirect: string, form: any) {
     this.firebaseAuth.auth.signInWithEmailAndPassword(email, password)
       .then(res => {
         console.log('Nice, it worked!', res);
         this.router.navigate([redirect]);
       }).catch(err => {
+        if(form){
+          if(err.error.type === 'password'){
+            form.controls.password.setErrors({'invalid': true});
+          }else if(err.error.type === 'email'){
+            form.controls.email.setErrors({'invalid': true});
+          }
+        }
         console.log('Something went wrong:',err.message);
       });
   }

@@ -43,6 +43,9 @@
     display: flex;
     flex-direction: column;
 }
+#visibility-icon {
+    cursor: pointer;
+}
 .spacer.flex-2 {
     flex: 2 0 0;
 }

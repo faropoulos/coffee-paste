@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import {
   MatButtonModule,
@@ -18,7 +19,8 @@ import {
     MatIconModule,
     MatRippleModule,
     MatTooltipModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ],
   declarations: [],
   providers: [],
@@ -28,7 +30,8 @@ import {
     MatIconModule,
     MatRippleModule,
     MatTooltipModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }
