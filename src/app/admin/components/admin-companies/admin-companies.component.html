@@ -1,0 +1,50 @@
+<div id="page-content">
+  <div class="page-toolbar">
+    <div class="page-title">Companies</div>
+    <span class="spacer"></span>
+    <mat-form-field id="settings-search">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Companies">
+      </mat-form-field>
+    <button mat-raised-button (click)="createCompany()"
+      color="primary">
+      <mat-icon>add</mat-icon>
+      New Company
+    </button>
+  </div>
+  <div id="companies-settings-container">
+    <ng-scrollbar id="companies-settings-scroll">
+      <mat-table #companiesTable [dataSource]="dataSource" matSort class="mat-elevation-z2">
+        <ng-container matColumnDef="title">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.title}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="userActions">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            <button mat-icon-button [matMenuTriggerFor]="menu"
+              (click)="$event.stopPropagation()">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="editCompany(row)">
+                <mat-icon>mode_edit</mat-icon>
+                <span>Edit Company</span>
+              </button>
+              <button mat-menu-item (click)="deleteCompany($event, row)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete Company</span>
+              </button>
+            </mat-menu>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"
+          (click)="viewCompany(row)"></mat-row>
+      </mat-table>
+    </ng-scrollbar>
+  </div>
+</div>
