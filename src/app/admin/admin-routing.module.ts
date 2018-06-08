@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { SharedModule } from '@coffee-shared/shared.module';
 
 import {
-  TestComponent
+  AdminCompaniesComponent
 } from './components';
 
 const routes: Routes = [
-  { path: '', component: TestComponent }
+  { path: '', component: AdminCompaniesComponent }
 ];
 
 @NgModule({

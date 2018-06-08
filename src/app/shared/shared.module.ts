@@ -1,37 +1,103 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ScrollbarModule } from 'ngx-scrollbar';
 
 import {
-  MatButtonModule,
+  MatSidenavModule,
+  MatToolbarModule,
   MatIconModule,
-  MatRippleModule,
+  MatButtonModule,
+  MatListModule,
+  MatMenuModule,
+  MatGridListModule,
+  MatInputModule,
+  MatCheckboxModule,
+  MatProgressBarModule,
+  MatChipsModule,
   MatTooltipModule,
-  MatInputModule
+  MatDatepickerModule,
+  MatSelectModule,
+  MatNativeDateModule,
+  MatDialogModule,
+  MatTableModule,
+  MatSortModule,
+  MatButtonToggleModule,
+  MatProgressSpinnerModule,
+  MatTabsModule,
+  MatCardModule,
+  MatRippleModule,
+  MatSlideToggleModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
     MatIconModule,
-    MatRippleModule,
-    MatTooltipModule,
+    MatButtonModule,
+    MatListModule,
+    MatMenuModule,
+    MatGridListModule,
     MatInputModule,
-    ReactiveFormsModule
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonToggleModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatCardModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    ScrollbarModule
   ],
   declarations: [],
   providers: [],
   exports: [
     CommonModule,
-    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
     MatIconModule,
-    MatRippleModule,
-    MatTooltipModule,
+    MatButtonModule,
+    MatListModule,
+    MatMenuModule,
+    MatGridListModule,
     MatInputModule,
-    ReactiveFormsModule
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonToggleModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatCardModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    ScrollbarModule
   ]
 })
 export class SharedModule { }
