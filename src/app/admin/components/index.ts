@@ -1,1 +1,1 @@
-export { TestComponent } from './test/test.component';
+export { AdminCompaniesComponent } from './admin-companies/admin-companies.component';

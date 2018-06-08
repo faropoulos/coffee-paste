@@ -1,16 +1,36 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ScrollbarModule } from 'ngx-scrollbar';
 
 import {
-  MatButtonModule,
+  MatSidenavModule,
+  MatToolbarModule,
   MatIconModule,
-  MatRippleModule,
-  MatTooltipModule,
-  MatInputModule,
+  MatButtonModule,
+  MatListModule,
   MatMenuModule,
-  MatDividerModule
+  MatGridListModule,
+  MatInputModule,
+  MatCheckboxModule,
+  MatProgressBarModule,
+  MatChipsModule,
+  MatTooltipModule,
+  MatDatepickerModule,
+  MatSelectModule,
+  MatNativeDateModule,
+  MatDialogModule,
+  MatTableModule,
+  MatSortModule,
+  MatButtonToggleModule,
+  MatProgressSpinnerModule,
+  MatTabsModule,
+  MatCardModule,
+  MatRippleModule,
+  MatSlideToggleModule,
+  MatSnackBarModule
 } from '@angular/material';
 
 import * as Components from '@coffee-shared/components';
@@ -19,14 +39,34 @@ import * as Components from '@coffee-shared/components';
   imports: [
     CommonModule,
     RouterModule,
-    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
     MatIconModule,
-    MatRippleModule,
-    MatTooltipModule,
-    MatInputModule,
+    MatButtonModule,
+    MatListModule,
     MatMenuModule,
-    MatDividerModule,
-    ReactiveFormsModule
+    MatGridListModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonToggleModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatCardModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    ScrollbarModule
   ],
   declarations: [
     Components.AppAvatarComponent
@@ -34,15 +74,34 @@ import * as Components from '@coffee-shared/components';
   providers: [],
   exports: [
     CommonModule,
-    MatButtonModule,
-    MatIconModule,
-    MatRippleModule,
-    MatTooltipModule,
-    MatInputModule,
     ReactiveFormsModule,
+    FormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatListModule,
     MatMenuModule,
-    MatDividerModule,
-    Components.AppAvatarComponent
+    MatGridListModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatSelectModule,
+    MatNativeDateModule,
+    MatDialogModule,
+    MatTableModule,
+    MatSortModule,
+    MatButtonToggleModule,
+    MatProgressSpinnerModule,
+    MatTabsModule,
+    MatCardModule,
+    MatRippleModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    ScrollbarModule
   ]
 })
 export class SharedModule { }

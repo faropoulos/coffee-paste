@@ -1,0 +1,60 @@
+#companies-settings-container {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    overflow: hidden;
+}
+
+.mat-table {
+    margin: 2px 2px 0 2px;
+}
+
+.mat-header-row {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 3;
+}
+
+.mat-header-cell:last-child,
+.mat-cell:last-child {
+    flex: unset;
+    min-width: 5rem;
+    display: flex;
+    flex-flow: column; 
+    color: #9E9E9E;
+    align-items: flex-end;
+}
+
+.mat-row ,
+.mat-header-row {
+    padding: 0 12px 0 24px;
+    min-height: 3.5rem;
+}
+
+.mat-row {
+    cursor: pointer;
+    transition: 150ms ease-out;
+}
+
+.mat-row:hover {
+    background-color: #eceff1;
+}
+
+.mat-header-cell {
+    font-weight: 600;
+    color: #0d47a1;
+}
+
+.company-color {
+    display: block;
+    height: 25px;
+    width: 25px;
+    border-radius: 20%;
+}
+
+.syncing {
+    margin: auto;
+    animation: sync 1s ease-out infinite;
+}
+@keyframes sync { 100% { -webkit-transform: rotate(-360deg); transform:rotate(-360deg); } }
