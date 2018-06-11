@@ -14,7 +14,7 @@
     padding: 0;
     overflow: hidden;
 }
-#au-user {
+.au-user {
     min-width: 250px;
     height: 100px;
     display: flex;
@@ -27,7 +27,7 @@
     color: #f6d282;
     padding: 0 1rem;
 }
-#au-details {
+.au-details {
     display: flex;
     flex-flow: column;
     flex: 1;
@@ -54,4 +54,10 @@
 }
 .au-mail {
     font-weight: 300;
+}
+.au-btn {
+    color: #593054;
+    .mat-icon {
+        color: #593054;
+    }
 }

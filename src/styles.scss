@@ -1,8 +1,75 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$primary: mat-palette($mat-deep-purple);
-$accent:  mat-palette($mat-amber, A200, A100, A400);
+// Custom Color Palette
+$primary-main: (
+    50 : #f9eaed,
+    100 : #f0cbd2,
+    200 : #e7a8b4,
+    300 : #dd8596,
+    400 : #d56b80,
+    500 : #ce5169,
+    600 : #c94a61,
+    700 : #c24056,
+    800 : #bc374c,
+    900 : #b0273b,
+    A100 : #ffeff1,
+    A200 : #ffbcc4,
+    A400 : #ff8998,
+    A700 : #ff6f82,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$accent-main: (
+    50 : #fefaf0,
+    100 : #fcf2da,
+    200 : #fbe9c1,
+    300 : #f9e0a8,
+    400 : #f7d995,
+    500 : #f6d282,
+    600 : #f5cd7a,
+    700 : #f3c76f,
+    800 : #f2c165,
+    900 : #efb652,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fff6e8,
+    A700 : #ffedcf,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: mat-palette($primary-main);
+$accent:  mat-palette($accent-main);
 $warn: mat-palette($mat-red);
 $theme: mat-light-theme($primary, $accent, $warn);
 
@@ -21,7 +88,33 @@ body {
     margin: 0;
     font: 400 14px/20px "Roboto", "Helvetica Neue", sans-serif;
 }
+// Helpers
 .spacer {
+    flex: 1 0 0;
+}
+.page-wrapper {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+}
+.page-header {
+    height: 3.5rem;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    margin: 0 2rem;
+    flex-shrink: 0;
+}
+.page-title {
+    color: #f6d282;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+    line-height: 3.5rem;
+}
+.page-content {
     flex: 1 0 0;
 }
 // Change Mat Defaults
@@ -33,7 +126,9 @@ body {
   max-width: none!important;
 }
 
-
+.mat-badge-medium.mat-badge-overlap.mat-badge-after {
+    margin: 0;
+}
 
 /*
 Yellow #f7d86a

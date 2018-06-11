@@ -1,0 +1,31 @@
+:host {
+    height: 80px;
+    display: flex;
+}
+.notifications-btn {
+    color: white;
+    margin: auto;
+}
+.menu-notifications-container {
+  width: 400px;
+  min-height: 300px;
+  position: relative;
+  background-color: #fae9c2;
+}
+.menu-notifications-bar {
+    display: flex;
+    background-color: #f6d282;
+    border-bottom: 1px solid #e6ba5a;
+    color: #4d284d;
+    height: 45px;
+    align-items: center;
+    flex-flow: row;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+.view-all-btn {
+    width: 100%;
+}
+//   #menu-notifications-container perfect-scrollbar {
+//       max-height: 500px;
+//   }

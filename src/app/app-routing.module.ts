@@ -8,6 +8,7 @@ import {
   AppSignUpComponent,
   AppShellComponent,
   DashboardComponent,
+  NotificationsComponent,
   PageNotFoundComponent
 } from '@coffee-core/components';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'notifications', component: NotificationsComponent },
       { path: 'admin', loadChildren: '@coffee-admin/admin.module#AdminModule' },
     ],
     canActivate: [ AuthGuard ]

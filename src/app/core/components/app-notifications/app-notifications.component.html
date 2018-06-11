@@ -1,0 +1,18 @@
+<button class="notifications-btn" mat-icon-button [matMenuTriggerFor]="notMenu">
+  <mat-icon [matBadge]="unseenNotifications" [matBadgeHidden]="!hasNewNotifications"
+    matBadgeColor="accent">{{ hasNewNotifications ? 'notifications' : 'notifications_none' }}</mat-icon>
+</button>
+<mat-menu #notMenu="matMenu" [overlapTrigger]="true">
+  <div class="menu-notifications-bar" (click)="$event.stopPropagation();">
+    <span>Notifications</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>settings</mat-icon>
+    </button>
+  </div>
+  <div class="menu-notifications-container">
+    <empty-state [options]="emptyState"></empty-state>
+  </div>
+  <button class="view-all-btn" color="accent"
+    mat-raised-button routerLink="/notifications">View All</button>
+</mat-menu>

@@ -35,7 +35,10 @@ import * as Guards from '@coffee-core/guards';
     Components.AppShellComponent,
     Components.AppMenuComponent,
     Components.AppUserComponent,
-    Components.DashboardComponent
+    Components.DashboardComponent,
+    Components.AppNotificationsComponent,
+    Components.NotificationsComponent,
+    Components.NotificationComponent
   ],
   providers: [
     Services.AuthService,
@@ -51,7 +54,10 @@ import * as Guards from '@coffee-core/guards';
     Components.PageNotFoundComponent,
     Components.AppShellComponent,
     Components.AppSignUpComponent,
-    Components.DashboardComponent    
+    Components.DashboardComponent,
+    Components.AppNotificationsComponent,
+    Components.NotificationsComponent,
+    Components.NotificationComponent
   ]
 })
 export class CoreModule {

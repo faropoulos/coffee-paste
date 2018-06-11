@@ -30,7 +30,8 @@ import {
   MatCardModule,
   MatRippleModule,
   MatSlideToggleModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatBadgeModule
 } from '@angular/material';
 
 import * as Components from '@coffee-shared/components';
@@ -66,10 +67,12 @@ import * as Components from '@coffee-shared/components';
     MatRippleModule,
     MatSlideToggleModule,
     MatSnackBarModule,
+    MatBadgeModule,
     ScrollbarModule
   ],
   declarations: [
-    Components.AppAvatarComponent
+    Components.AppAvatarComponent,
+    Components.EmptyStateComponent
   ],
   providers: [],
   exports: [
@@ -101,8 +104,10 @@ import * as Components from '@coffee-shared/components';
     MatRippleModule,
     MatSlideToggleModule,
     MatSnackBarModule,
+    MatBadgeModule,
     ScrollbarModule,
-    Components.AppAvatarComponent
+    Components.AppAvatarComponent,
+    Components.EmptyStateComponent
   ]
 })
 export class SharedModule { }

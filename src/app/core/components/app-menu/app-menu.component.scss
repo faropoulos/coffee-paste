@@ -46,10 +46,11 @@
     height: 80px;
     transition: 150ms ease-out;
     user-select: none;
+    text-decoration: none;
+    outline: none;
     &.active,  &:hover {
         background-color: #a64262;
         color: #f6d282;
-        outline: none;
         .app-menu-dot {
             border-color: #a64262;
         }

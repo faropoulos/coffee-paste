@@ -1,28 +1,29 @@
 <div id="app-menu-logo" routerLink="/">
   <img [src]="logoUrl" title="Home">
 </div>
-<div class="app-menu-item" mat-ripple matRippleColor="rgba(255, 255, 255, 0.1)"
+<a class="app-menu-item" mat-ripple matRippleColor="rgba(255, 255, 255, 0.1)"
   routerLink="/dashboard" routerLinkActive="active">
   <div class="app-menu-icon-wrapper">
     <span class="app-menu-dot"></span>
     <mat-icon>dashboard</mat-icon>
   </div>
   <span class="app-menu-title">Dashboard</span>
-</div>
-<div class="app-menu-item" mat-ripple matRippleColor="rgba(255, 255, 255, 0.1)">
+</a>
+<a class="app-menu-item" mat-ripple matRippleColor="rgba(255, 255, 255, 0.1)">
   <div class="app-menu-icon-wrapper">
     <span class="app-menu-dot"></span>
     <mat-icon>forum</mat-icon>
   </div>
   <span class="app-menu-title">Chat</span>
-</div>
+</a>
 <span class="spacer"></span>
-<div class="app-menu-item" mat-ripple matRippleColor="rgba(255, 255, 255, 0.1)"
+<app-notifications></app-notifications>
+<a class="app-menu-item" mat-ripple matRippleColor="rgba(255, 255, 255, 0.1)"
   routerLink="/admin" routerLinkActive="active">
   <div class="app-menu-icon-wrapper">
     <span class="app-menu-dot"></span>
     <mat-icon>settings</mat-icon>
   </div>
   <span class="app-menu-title">Application Settings</span>
-</div>
+</a>
 <app-user></app-user>
